@@ -17,7 +17,7 @@ public class KffTest extends TestBase {
 	CalculatorPage calculatorPage = new CalculatorPage(driver);
 	StateDataPage stateDataPage = new StateDataPage(driver);
 
-	@Test(priority = 1) 
+	@Test(priority = 1, groups="smoke") 
 	public void testTitleMenuCalc() {
 		extentLogger = report.createTest("Verifying the title");
 		
