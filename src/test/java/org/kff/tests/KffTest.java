@@ -38,7 +38,9 @@ public class KffTest extends TestBase {
 		assertEquals(calculatorPage.healthInsuranceMarketplaceCalculator.getText(), "Health Insurance Marketplace Calculator");
 		assertEquals(calculatorPage.date.getText().substring(0, 16), "November 3, 2017");
 		
-
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,2000)");
+		
 		calculatorPage.healthInsuranceMarketplaceCalculator.click();
 		assertEquals(calculatorPage.verifyText.getText(),
 				"Note: This calculator has been updated with premiums for 2018 plans.");
@@ -67,6 +69,9 @@ public class KffTest extends TestBase {
 		homePage.menu.click();
 		
 		BrowserUtils.hover(homePage.statHealthFacts);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,2000)");
+		
 		homePage.statHealthFacts.click();
 		homePage.statHealthFactsSub.click();
 
