@@ -39,7 +39,9 @@ public class HomePage {
 	@FindBy(id="search-submit")
 	public WebElement submitBtn;
 	
-	
+	public void goToCalculatorPage(WebDriver driver){
+		driver.navigate().to("https://www.kff.org/interactive/subsidy-calculator/");
+	}
 	
 	
 	

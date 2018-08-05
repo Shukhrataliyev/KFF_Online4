@@ -39,7 +39,7 @@ public class CalculatorPage {
 	@FindBy(id="locale-inner")
 	public WebElement countyDropDown; 
 	
-	@FindBy(css="p:contains(^Enter income as$)")  //xpath="//p[.='Enter income as']"
+	@FindBy(xpath="//p[.='Enter income as']")  //xpath="//p[.='Enter income as']"
 	public WebElement incomeText; 
 	
 	@FindBy(name="income-type")
@@ -87,6 +87,44 @@ public class CalculatorPage {
 	@FindBy(css="span[class='num']+p")
 	public List<WebElement> listCalculatorOptons; 
 	
+
 	
+	@FindBy(xpath="//strong[contains(text(),'2018 plans')]")
+	public WebElement noteText; 
 	
+	@FindBy(linkText="notes")
+	public WebElement noteLink; 
+	
+	@FindBy(linkText="Frequently Asked Questions")
+	public WebElement faqLink;
+	
+	@FindBy(xpath="//h5[.='about this tool']/..//following-sibling::a")
+	public WebElement aboutPlus; 
+	
+	@FindBy(xpath="//h5[.='notes']/..//following-sibling::a")
+	public WebElement notesPlus; 
+	
+	@FindBy(xpath="//h5[.='Frequently Asked Questions']/..//following-sibling::a")
+	public WebElement faqPlus; 
+
+	@FindBy(xpath="//h5[.='about this tool']/../..//following-sibling::dd")
+	public WebElement aboutParagraph; 
+	
+	@FindBy(xpath="//h5[.='notes']/../..//following-sibling::dd")
+	public WebElement notesParagraph; 
+	
+	@FindBy(xpath="//h5[.='Frequently Asked Questions']/../..//following-sibling::dd")
+	public WebElement faqParagraph;
+	
+	@FindBy(xpath="//input[@type='submit' and @value='Submit']")
+	public WebElement submitBtn; 
+	
+	@FindBy(xpath="//p[@class='form-message']")
+	public WebElement message; 
+	
+	@FindBy(xpath="//h2[.='Results']")
+	public WebElement results; 
+
+	@FindBy (xpath="//h4[contains(text(), 'Market')]")
+	public WebElement header; 
 }
