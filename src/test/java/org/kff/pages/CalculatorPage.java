@@ -23,8 +23,11 @@ public class CalculatorPage {
 	
 	@FindBy(id="zip-prompt")
 	public WebElement stateText; 
+
+	@FindBy(xpath="//span[@class='num' and .='1.']")
+	public WebElement stateTextNum1; 
 	
-	@FindBy(id="state-wrapper")
+	@FindBy(id="state-dd")
 	public WebElement stateDropDown; 
 	
 	@FindBy(css="p:contains(^Enter your zip code$)")  //xpath="//p[.='Enter your zip code']"
@@ -86,6 +89,15 @@ public class CalculatorPage {
 	
 	@FindBy(css="span[class='num']+p")
 	public List<WebElement> listCalculatorOptons; 
+	
+	
+	@FindBy(xpath="//p[@class = 'buttons']/input[@type='submit']")
+	public WebElement submitBtn; 
+	
+	@FindBy(xpath="//p[.='Please enter a valid income.']")
+	public WebElement PleaseEnterValidText; 
+	
+	
 	
 	
 	

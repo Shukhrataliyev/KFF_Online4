@@ -52,7 +52,7 @@ public abstract class TestBase {
 		actions = new Actions(driver);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().deleteAllCookies();
-		//driver.manage().window().fullscreen();
+		driver.manage().window().fullscreen();
 
 		driver.get(ConfigurationReader.getProperty("url"));
 		
@@ -78,7 +78,7 @@ public abstract class TestBase {
 		} else if (result.getStatus() == ITestResult.SKIP) {
 			extentLogger.skip("Test Case Skipped is " + result.getName());
 		}
-		 Driver.closeDriver();
+		// Driver.closeDriver();
 	}
 
 	@AfterTest

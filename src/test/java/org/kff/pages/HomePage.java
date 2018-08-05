@@ -24,6 +24,9 @@ public class HomePage {
 	@FindBy(css="a[href='/statedata']")
 	public WebElement statHealthFacts;
 	
+	@FindBy(css="a[href='/private-insurance/']")
+	public WebElement privateInsurance;
+	
 	@FindBy(xpath="//ul[@class='sub-menu']//a[@href='/statedata']")
 	public WebElement statHealthFactsSub;
 	
