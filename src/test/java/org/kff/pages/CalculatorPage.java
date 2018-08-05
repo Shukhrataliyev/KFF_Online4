@@ -90,6 +90,7 @@ public class CalculatorPage {
 	@FindBy(css="span[class='num']+p")
 	public List<WebElement> listCalculatorOptons; 
 	
+	
 
 	
 	@FindBy(xpath="//strong[contains(text(),'2018 plans')]")
@@ -130,4 +131,7 @@ public class CalculatorPage {
 
 	@FindBy (xpath="//h4[contains(text(), 'Market')]")
 	public WebElement header; 
+	
+	@FindBy(xpath="//p[.='Please enter a valid income.']")
+	public WebElement PleaseEnterValidText; 
 }
