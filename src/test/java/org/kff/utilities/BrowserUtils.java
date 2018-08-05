@@ -12,6 +12,7 @@ import java.util.function.Function;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -42,6 +43,13 @@ public class BrowserUtils {
 		Actions actions = new Actions(Driver.getDriver());
 		actions.moveToElement(element).perform();
 	}
+
+	 public static void scroll(WebElement element){
+			Actions actions = new Actions(Driver.getDriver());
+			actions.sendKeys(Keys.PAGE_DOWN).perform();
+			actions.sendKeys(Keys.PAGE_DOWN).perform();
+			
+    }
 
 	/**
 	 * return a list of string from a list of elements ignores any element with no
