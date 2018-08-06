@@ -151,7 +151,7 @@ public class CalculatorPage {
 	public WebElement yourSpouseJob;
 
 	@FindBy(name = "employer-coverage")
-	public List<WebElement> noYes;
+	public WebElement noYes;
 
 	@FindBy(name = "people")
 	public WebElement numberOfPeopleInFamily;
@@ -178,6 +178,7 @@ public class CalculatorPage {
 	@FindBy(xpath = "//select[@name='adults[0][age]']")
 	public WebElement age21;
 	
+
 	@FindBy(xpath = "//select[@name='adults[0][tobacco]']")
 	public WebElement no;
 	
@@ -186,6 +187,10 @@ public class CalculatorPage {
 	
 	@FindBy(xpath = "//select[@name='adults[0][tobacco]']")
 	public WebElement usesTobaccoDisplayed;
+
+	@FindBy (xpath="//span[@class='inline-tip']")
+	public List<WebElement> questionMarkList;  
+
 	
 	
 	
@@ -228,10 +233,17 @@ public class CalculatorPage {
 		numOfChildren.selectByIndex(0);
 	}
 
-	public void noYesSpouseJobViaDropDown() {
+	public List<String> noYesSpouseJobViaDropDown() {
 
-		Select yesNo = new Select((WebElement) noYes);
-		yesNo.getOptions();
+
+		Select yesNo = new Select( noYes);
+		List<WebElement> lst=yesNo.getOptions();
+		List<String> lstStr=new ArrayList<>(); 
+		for (WebElement object : lst) {
+			lstStr.add(object.getText()); 
+		}
+		return lstStr; 
+		
 	}
 
 	public void coveregeSpouseJobViaDropDown() {
@@ -289,5 +301,10 @@ public class CalculatorPage {
 	
 	
 	
+	public String getFirstDropDown(WebElement wb){
+		Select slc=new Select(wb);
+		return slc.getFirstSelectedOption().getText();
+	}
 	
+
 }
