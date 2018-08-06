@@ -68,7 +68,11 @@ public class KFFTestCases1_3 extends TestBase {
 		extentLogger = report.createTest("Verifying population of the first state");
 		extentLogger.info("Verifying population of the first state");
 		Assert.assertEquals(actualPopualation, "4,834,100");
+		homePage.goToStateData(driver);
+		stateData.healthReform.click();
 		
 	}
+	
+	
 
 }
