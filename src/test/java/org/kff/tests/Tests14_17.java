@@ -29,7 +29,8 @@ public class Tests14_17 extends TestBase {
 		homePage = new HomePage(driver);
 		homePage.goToCalculatorPage(driver);
 		caclulatorPage = new CalculatorPage(driver);
-
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");
 		String actualTitle = driver.getTitle();
 		String expectedTitle = "Health Insurance Marketplace Calculator | The Henry J. Kaiser Family Foundation";
 		extentLogger.info("verifying title");
@@ -82,20 +83,21 @@ public class Tests14_17 extends TestBase {
 	}
 
 	@Test
-	public void testCase16(List<WebElement> numberOfPeopleInFamily) {
+	public void testCase16() {
 		extentLogger = report.createTest("Calculator - Number of people in family field, values check");
 		homePage = new HomePage(driver);
 		homePage.goToCalculatorPage(driver);
 		caclulatorPage = new CalculatorPage(driver);
 
 		caclulatorPage = new CalculatorPage(driver);
-
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,400)");
 		String actualTitle = driver.getTitle();
 		String expectedTitle = "Health Insurance Marketplace Calculator | The Henry J. Kaiser Family Foundation";
 		extentLogger.info("verifying title");
 		assertEquals(expectedTitle, actualTitle);
 
-		caclulatorPage.listMaker(numberOfPeopleInFamily);
+	  //caclulatorPage.listMaker(calculatorPage.numberOfPeopleInFamily);
 		caclulatorPage.twoPeopleInFamilyViaDropDown();
 
 	}
