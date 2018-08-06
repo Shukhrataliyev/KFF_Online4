@@ -1,5 +1,7 @@
 package org.kff.pages;
 
+import java.util.List;
+
 import org.kff.utilities.Driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,9 +32,6 @@ public class HomePage {
 	@FindBy(xpath="//ul[@class='sub-menu']//a[@href='/statedata']")
 	public WebElement statHealthFactsSub;
 	
-	@FindBy(xpath="//a")
-	public WebElement links;
-	
 	@FindBy(xpath="//h4[.='Featured State Data Resources']")
 	public WebElement featuredStateData;
 	
@@ -42,8 +41,15 @@ public class HomePage {
 	@FindBy(id="search-submit")
 	public WebElement submitBtn;
 	
+	@FindBy(tagName="a")
+	public List<WebElement> links;
+	
 	public void goToCalculatorPage(WebDriver driver){
 		driver.navigate().to("https://www.kff.org/interactive/subsidy-calculator/");
+	}
+	
+	public void goToStateData(WebDriver driver){
+		driver.navigate().to("https://www.kff.org/statedata");
 	}
 	
 	
