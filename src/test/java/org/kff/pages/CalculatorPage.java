@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public class CalculatorPage {
 
@@ -134,4 +135,105 @@ public class CalculatorPage {
 	
 	@FindBy(xpath="//p[.='Please enter a valid income.']")
 	public WebElement PleaseEnterValidText; 
+	
+	
+	
+	
+	@FindBy(id = "state-dd")
+	public WebElement selectState;
+
+	@FindBy(name = "income-type")
+	public WebElement incomeAs;
+
+	@FindBy(name = "income")
+	public WebElement houseHold;
+
+	@FindBy(name = "employer-coverage")
+	public WebElement yourSpouseJob;
+	
+	@FindBy(name = "employer-coverage")
+	public List<WebElement> noYes;
+
+
+	@FindBy(name = "people")
+	public WebElement numberOfPeopleInFamily;
+
+	@FindBy(name = "adult-count")
+	public WebElement numberOfAdults;
+
+	@FindBy(name = "child-count")
+	public WebElement numberOfChildren;
+
+	@FindBy(css = "input[value=Submit]") // input[@value='Submit']
+	public WebElement submit;
+
+	@FindBy(css = "input[value=Clear]") // input[@value='Clear']
+	public WebElement clear;
+
+	@FindBy(xpath = "//p[.='Please enter a valid income.']") 
+	public WebElement enterValidIncomeText ;
+	
+	@FindBy(xpath = "//dl[@class='about accordionShow']//a[@class='plus-btn']") 
+	public WebElement clickOnPlus ;
+	
+	
+	
+	
+	
+	public void stateViaDropDown() {
+
+		Select state = new Select(selectState);
+		state.selectByIndex(0);
+	}
+
+	public void incomeViaDropDown() {
+
+		Select income = new Select(incomeAs);
+		income.selectByIndex(0);
+
+	}
+
+	public void spouseJobViaDropDown() {
+
+		Select spouseJob = new Select(yourSpouseJob);
+		spouseJob.selectByIndex(0);
+
+	}
+
+	public void numberOfPeopleInFamilyViaDropDown() {
+
+		Select peopleInFamily = new Select(numberOfPeopleInFamily);
+		peopleInFamily.selectByIndex(0);
+	}
+
+	public void numberOfAdulstViaDropDown() {
+
+		Select numOfAdult = new Select(numberOfAdults);
+		numOfAdult.selectByIndex(0);
+	}
+
+	public void numberOfChildrenViaDropDown() {
+
+		Select numOfChildren = new Select(numberOfChildren);
+		numOfChildren.selectByIndex(0);
+	}
+	
+	public void noYesSpouseJobViaDropDown() {
+
+		Select yesNo = new Select((WebElement) noYes);
+		yesNo.getOptions();
+	}
+	
+	public void coveregeSpouseJobViaDropDown() {
+
+		Select coverageYes = new Select(yourSpouseJob);
+		coverageYes.selectByIndex(1);
+
+	}
+	
+	
+	
+	
+	
+	
 }
