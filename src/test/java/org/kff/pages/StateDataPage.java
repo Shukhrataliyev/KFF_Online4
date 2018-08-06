@@ -25,6 +25,12 @@ public WebElement selectState;
 	@FindBy(xpath = "//h2[.='Search State Health Facts:']")
 	public WebElement SSHF;
 	
+	@FindBy(xpath = "//h3[.='New & Updated Indicators']")
+	public WebElement newUpdatedInd;
+	
+	@FindBy(xpath="//a[.='Section 1115 Medicaid Waiver Tracker']")
+	public WebElement section1115;
+	
 
 
 }
