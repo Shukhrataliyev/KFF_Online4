@@ -138,7 +138,6 @@ public class CalculatorPage {
 	
 	
 	
-	
 	@FindBy(id = "state-dd")
 	public WebElement selectState;
 
@@ -150,10 +149,9 @@ public class CalculatorPage {
 
 	@FindBy(name = "employer-coverage")
 	public WebElement yourSpouseJob;
-	
+
 	@FindBy(name = "employer-coverage")
 	public List<WebElement> noYes;
-
 
 	@FindBy(name = "people")
 	public WebElement numberOfPeopleInFamily;
@@ -170,16 +168,28 @@ public class CalculatorPage {
 	@FindBy(css = "input[value=Clear]") // input[@value='Clear']
 	public WebElement clear;
 
-	@FindBy(xpath = "//p[.='Please enter a valid income.']") 
-	public WebElement enterValidIncomeText ;
-	
-	@FindBy(xpath = "//dl[@class='about accordionShow']//a[@class='plus-btn']") 
-	public WebElement clickOnPlus ;
-	
-	
+	@FindBy(xpath = "//p[.='Please enter a valid income.']")
+	public WebElement enterValidIncomeText;
+
+	@FindBy(xpath = "//dl[@class='about accordionShow']//a[@class='plus-btn']")
+	public WebElement clickOnPlus;
 	
 	
+	@FindBy(xpath = "//select[@name='adults[0][age]']")
+	public WebElement age21;
 	
+	@FindBy(xpath = "//select[@name='adults[0][tobacco]']")
+	public WebElement no;
+	
+	@FindBy(xpath = "//p[@class='adult-info-wrapper adult-info0']")
+	public WebElement ageDisplayed;
+	
+	@FindBy(xpath = "//select[@name='adults[0][tobacco]']")
+	public WebElement usesTobaccoDisplayed;
+	
+	
+	
+
 	public void stateViaDropDown() {
 
 		Select state = new Select(selectState);
@@ -217,20 +227,64 @@ public class CalculatorPage {
 		Select numOfChildren = new Select(numberOfChildren);
 		numOfChildren.selectByIndex(0);
 	}
-	
+
 	public void noYesSpouseJobViaDropDown() {
 
 		Select yesNo = new Select((WebElement) noYes);
 		yesNo.getOptions();
 	}
-	
+
 	public void coveregeSpouseJobViaDropDown() {
 
 		Select coverageYes = new Select(yourSpouseJob);
 		coverageYes.selectByIndex(1);
 
 	}
+
+	public List<String> listMaker(List<WebElement> elements) {
+		List<String> ls = new ArrayList<>();
+		for (WebElement numberOfPeopleInFamily : elements) {
+			ls.add(numberOfPeopleInFamily.getText());
+		}
+		return ls;
+	}
+
+	public void twoPeopleInFamilyViaDropDown() {
+
+		Select peopleInFamily = new Select(numberOfPeopleInFamily);
+		peopleInFamily.selectByIndex(1);
+	}
+
+	public void noAdults() {
+
+		Select list = new Select(numberOfAdults);
+		List<WebElement> allSelectedOptions = list.getAllSelectedOptions();
+		for (WebElement webElement : allSelectedOptions) {
+			System.out.println(webElement.getText());
+		}
+
+	}
 	
+	public void oneAdultViaDropDown() {
+
+		Select numOfAdult = new Select(numberOfAdults);
+		numOfAdult.selectByIndex(1);
+	}
+	
+	
+	public void age21ViaDropDown() {
+
+		Select age = new Select(age21);
+		age.selectByVisibleText("21");
+
+	}
+	
+	public void usesTobaccoViaDropDown() {
+
+		Select useTobacco = new Select(no);
+		useTobacco.selectByVisibleText("No");
+
+	}
 	
 	
 	
