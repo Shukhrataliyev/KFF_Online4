@@ -27,7 +27,7 @@ public class Test789 extends TestBase {
 		homePage.menu.click();
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,1000)");
+        js.executeScript("window.scrollBy(0,2000)");
 		homePage.statHealthFacts.click();
 		homePage.statHealthFactsSub.click();
 		

@@ -2,8 +2,8 @@
 <suite name="KFF Automation Smoke Test" verbose="2">
 	
 	<test name="Smoke test">
-		<classes>
-			<class name="org.kff.tests.KffTest"></class>
-		</classes>
+		<packages>
+			<package name="org.kff.tests"></package>
+		</packages>
 	</test>
 </suite>

@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 public class KFFTestCases1_3 extends TestBase {
 	
 	HomePage homePage = new HomePage(driver);
-	StateDataPage stateData = new StateDataPage(driver);
+	StateDataPage stateDataPage = new StateDataPage(driver);
 	String actualTitle = "Search | Search Results | Health aid | The Henry J. Kaiser Family Foundation";
 	String actualNewTitle = "State Health Facts | The Henry J. Kaiser Family Foundation";
 	
@@ -25,8 +25,8 @@ public class KFFTestCases1_3 extends TestBase {
 		extentLogger = report.createTest("Verifying the title");
 
 		BrowserUtils.waitForPageToLoad(3);
-		stateData.searchField.sendKeys("Health aid");
-		stateData.searchSubmit.click();
+		stateDataPage.searchField.sendKeys("Health aid");
+		stateDataPage.searchSubmit.click();
 		String ecpectedTitle = Driver.getDriver().getTitle();
 		
 		extentLogger.info("verifying title");
@@ -58,18 +58,18 @@ public class KFFTestCases1_3 extends TestBase {
 //		JavascriptExecutor js = (JavascriptExecutor) driver;
 //        js.executeScript("window.scrollBy(0,700)");
 		
-		stateData.demographics.click();
-		stateData.totalNumberOfResidents.click();
-		String actualState = stateData.states.get(2).getText();
+		stateDataPage.demographics.click();
+		stateDataPage.totalNumberOfResidents.click();
+		String actualState = stateDataPage.states.get(2).getText();
 		extentLogger = report.createTest("Verifying the first state");
 		extentLogger.info("Verifying the first state");
 		Assert.assertEquals(actualState, "Alabama");
-		String actualPopualation = stateData.residents.get(2).getText();
+		String actualPopualation = stateDataPage.residents.get(2).getText();
 		extentLogger = report.createTest("Verifying population of the first state");
 		extentLogger.info("Verifying population of the first state");
 		Assert.assertEquals(actualPopualation, "4,834,100");
 		homePage.goToStateData(driver);
-		stateData.healthReform.click();
+		stateDataPage.healthReform.click();
 		
 	}
 	
