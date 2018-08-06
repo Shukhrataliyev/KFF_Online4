@@ -47,6 +47,7 @@ public class HomePage {
 	public void goToCalculatorPage(WebDriver driver){
 		driver.navigate().to("https://www.kff.org/interactive/subsidy-calculator/");
 	}
+<<<<<<< HEAD
 	
 	public void goToStateData(WebDriver driver){
 		driver.navigate().to("https://www.kff.org/statedata");
@@ -58,5 +59,7 @@ public class HomePage {
 	
 
 	
+=======
+>>>>>>> 44b0cfc962e2a5f81d9745461246310b8a6dfd4a
 
 }
