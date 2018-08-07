@@ -53,8 +53,8 @@ public class Test3 extends TestBase {
 	
 
 	
-	@Test(priority = 8)
-	public void Test8() {
+	@Test(priority = 9)
+	public void Test9() {
 		extentLogger = report.createTest("Checking ? mark explanation visibility");
 		homePage.goToCalculatorPage(driver);
 		calculatorPage = new CalculatorPage(driver);

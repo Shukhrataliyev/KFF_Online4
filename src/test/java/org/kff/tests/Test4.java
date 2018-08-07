@@ -84,7 +84,7 @@ public class Test4 extends TestBase {
 		BrowserUtils.waitFor(1);
 		
 		if(calculatorPage.results.isDisplayed()){
-			assertTrue(true, "result page shown no error message appearead");
+			assertTrue(false, "result page shown no error message appearead");
 		}else{
 			 assertEquals(calculatorPage.message.getText(), 
 					"Please enter a positive value. Your income should be more than $1 ");
