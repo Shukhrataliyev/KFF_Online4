@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="KFF Automation Smoke Test" verbose="2">
+<suite name="KFF Automation Regression Test" verbose="2">
 	
-	<test name="Smoke test">
+	<test name="Test">
 		<packages>
 			<package name="org.kff.tests"></package>
 		</packages>

@@ -165,7 +165,7 @@ public class CalculatorPage {
 	@FindBy(css = "input[value=Submit]") // input[@value='Submit']
 	public WebElement submit;
 
-	@FindBy(css = "input[value=Clear]") // input[@value='Clear']
+	@FindBy(css = "input[value='Clear']") // input[@value='Clear']
 	public WebElement clear;
 
 	@FindBy(xpath = "//p[.='Please enter a valid income.']")
